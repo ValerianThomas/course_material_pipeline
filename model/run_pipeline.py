@@ -2,7 +2,6 @@ import pandas as pd
 import os
 import pickle
 from model.pipeline_preparation import prediction_pipeline
-from sklearn.model_selection import train_test_split
 
 print("real", os.path.realpath(__file__))
 TRAINING_DATA_FILE = os.path.dirname(os.path.realpath(__file__)) + '/datasets/train.csv'
