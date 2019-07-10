@@ -1,15 +1,20 @@
 import pandas as pd 
-import os  
+import os
+import pickle
 from model.pipeline_preparation import prediction_pipeline
 from sklearn.model_selection import train_test_split
 
 print("real", os.path.realpath(__file__))
 TRAINING_DATA_FILE = os.path.dirname(os.path.realpath(__file__)) + '/datasets/train.csv'
 TESTING_DATA_FILE = os.path.dirname(os.path.realpath(__file__)) + '/datasets/test.csv'
+MODEL_PATH = os.path.dirname(os.path.realpath(__file__)) + '/saved_model/model.sav'
 def _remove_missing_y (df):
   df = df.copy()
   df.dropna(subset=['price'],axis=0, inplace=True)
   return df
+
+def _save_model(model) :
+  pickle.dump(model,open(MODEL_PATH,'wb'))
 
 def read_train():
   data = pd.read_csv(TRAINING_DATA_FILE)
@@ -24,8 +29,7 @@ def read_train():
   y_test = test_data['price']
 
   prediction_pipeline.fit(X_train,y_train)
-  print(prediction_pipeline.score(X_test,y_test))
-
+  _save_model(prediction_pipeline)  
 
 if __name__ == '__main__':
   read_train()
