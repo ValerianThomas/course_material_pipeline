@@ -1,7 +1,7 @@
 import pandas as pd 
 import os
 import pickle
-from model.pipeline_preparation import prediction_pipeline
+from .pipeline_preparation import prediction_pipeline
 
 print("real", os.path.realpath(__file__))
 TRAINING_DATA_FILE = os.path.dirname(os.path.realpath(__file__)) + '/datasets/train.csv'

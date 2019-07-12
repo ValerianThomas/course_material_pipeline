@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
-from model.preprocessors import Select_all_usefull_features, Replace_nan_numerical_values, Get_Dummies, Replace_missing_Dummies
+from .preprocessors import Select_all_usefull_features, Replace_nan_numerical_values, Get_Dummies, Replace_missing_Dummies
 from sklearn.impute import SimpleImputer
 
 NUMERICAL_FEATURES = ['curb-weight', 'engine-size']
