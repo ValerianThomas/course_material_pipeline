@@ -1,7 +1,5 @@
-import sys
-sys.path.append('API/model')
-from API.app import create_app
+from API import app
 
-server = create_app()
 
-server.run()
+if __name__ == '__main__':
+  app.run()
