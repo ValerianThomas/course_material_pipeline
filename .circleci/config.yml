@@ -23,7 +23,7 @@ fetch_data: &fetch_data
 
 jobs:
   section_10_deploy_to_heroku:
-	  <<: *defaults
+    <<: *defaults
     - *prepare_env
 	  steps:
 	    - checkout
