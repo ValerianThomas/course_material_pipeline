@@ -8,7 +8,6 @@ def predict():
   req_data = request.get_json()
   prediction = make_prediction(req_data).tolist()
 
-
   return jsonify({'success':True,"prediction": prediction})
 
 @prediction_app.route('/health',methods=['GET'])
