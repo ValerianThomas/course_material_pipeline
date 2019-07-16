@@ -40,6 +40,6 @@ jobs:
             heroku container:release web -a car_model
 workflows:
   version: 2
-  test-all:
+  build:
     jobs:
       - section_11_deploy_to_heroku_using_docker
