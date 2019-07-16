@@ -23,7 +23,7 @@ jobs:
           name: Deploy to Heroku
           command: |
             wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
-            docker login --username=$HEROKU_MAIL --password=$HEROKU_API_KEY registry.heroku.com
+            heroku container:login
             heroku container:push web -a car_model
             heroku container:release eb -a car_model
 workflows:
