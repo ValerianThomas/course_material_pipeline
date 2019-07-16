@@ -26,7 +26,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      *prepare_venv
+      - *prepare_venv
       - setup_remote_docker:
         docker_layer_caching: true
       - run: docker login --username=$HEROKU_MAIL --password=$HEROKU_API__KEY registry.heroku.com
