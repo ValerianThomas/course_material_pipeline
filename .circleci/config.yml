@@ -24,8 +24,8 @@ jobs:
           command: |
             wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
             docker login --username=$HEROKU_MAIL --password=$HEROKU_API_KEY registry.heroku.com
-            heroku container:push -a car_model
-            heroku container:release -a car_model
+            make build-car_model-heroku push-car_model-heroku
+             heroku container:release web --app car_model
 workflows:
   version: 2
   test-all:
