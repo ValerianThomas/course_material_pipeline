@@ -1,0 +1,1 @@
+docker run --name car_model -d -p $PORT:$PORT --rm car_model:latest
