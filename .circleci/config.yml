@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            docker login --username=$HEROKU_MAIL --password=$HEROKU_API__KEY registry.heroku.com
+            docker login --username=$HEROKU_MAIL --password=$HEROKU_API_KEY registry.heroku.com
             heroku container:push web -a car_model
             heroku container:release eb -a car_model
 workflows:
