@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            apt install --classic heroku
+            apt install heroku
             docker login --username=$HEROKU_MAIL --password=$HEROKU_API_KEY registry.heroku.com
             heroku container:push web -a car_model
             heroku container:release eb -a car_model
