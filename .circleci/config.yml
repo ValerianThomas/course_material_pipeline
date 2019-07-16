@@ -12,7 +12,7 @@ prepare_venv: &prepare_venv
       python3 -m venv venv
       source venv/bin/activate
       pip install --upgrade pip
-      snap install --classic heroku
+      
 
 jobs:
   section_10_deploy_to_heroku:
@@ -22,6 +22,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
+            snap install --classic heroku
             docker login --username=$HEROKU_MAIL --password=$HEROKU_API_KEY registry.heroku.com
             heroku container:push web -a car_model
             heroku container:release eb -a car_model
